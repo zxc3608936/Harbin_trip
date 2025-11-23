@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026年哈爾濱之旅</title>
+    <title>2026年哈爾濱之旅 (最終修正版)</title>
     <style>
         :root {
             --primary: #007AFF;
@@ -625,7 +625,6 @@
                     <select id="expense-payer" class="form-input">
                         <option value="陳冠廷">陳冠廷</option>
                         <option value="鍾立軒">鍾立軒</option>
-                        <option value="其他">其他</option>
                     </select>
                 </div>
                 <button class="btn-primary" onclick="addExpense()">+ 記一筆</button>
@@ -634,6 +633,7 @@
             <!-- Expense List -->
             <h3 style="margin-bottom: 10px;">消費明細</h3>
             <div id="expense-list-container" class="expense-list">
+                <!-- Items will be added here -->
                 <div style="text-align:center; color:#ccc; padding:20px;">尚無紀錄</div>
             </div>
 
@@ -763,7 +763,7 @@
             }
 
             let totalTWD = 0;
-            let paidBy = { '陳冠廷': 0, '鍾立軒': 0, '其他': 0 };
+            let paidBy = { '陳冠廷': 0, '鍾立軒': 0 };
 
             // Render List & Calculate Totals
             expenses.slice().reverse().forEach((ex, index) => {
